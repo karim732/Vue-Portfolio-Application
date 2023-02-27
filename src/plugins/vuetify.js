@@ -1,3 +1,6 @@
+
+
+
 /**
  * plugins/vuetify.js
  *
@@ -9,41 +12,36 @@ import "@mdi/font/css/materialdesignicons.css";
 import "vuetify/styles";
 
 // Composables
-import { createVuetify, ThemeDefinition } from "vuetify";
+import { createVuetify } from "vuetify";
 import { md3 } from "vuetify/blueprints";
 import { aliases, mdi } from "vuetify/iconsets/mdi";
 import { fa } from "vuetify/iconsets/fa";
-
-const myCustomLightTheme = {
-  dark: false,
-  colors: {
-    background: "#FFFFFF",
-    surface: "#FFFFFF",
-    primary: "#6200EE",
-    "primary-darken-1": "#3700B3",
-    secondary: "#03DAC6",
-    "secondary-darken-1": "#018786",
-    error: "#B00020",
-    info: "#2196F3",
-    success: "#4CAF50",
-    warning: "#FB8C00",
-  },
-};
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   blueprint: md3,
   theme: {
-    defaultTheme: "myCustomLightTheme",
-    variations: {
-      colors: ["primary", "secondary"],
-      lighten: 1,
-      darken: 2,
-    },
     themes: {
-      myCustomLightTheme,
+      light: {
+        dark: false,
+        colors: {
+          primary: "#008ECF",
+          secondary: "#58cced",
+          primary_lighten: "#F0F0F0",
+          accent: "#82B1FF",
+          error: "#FF5252",
+          info: "#2196F3",
+          success: "#4CAF50",
+          warning: "#FFC107",
+          navy: "#003852",
+          brand_color1:"#0A1828",
+          brand_color2:"#178582",
+          brand_color3:"#BFA181"
+        },
+      },
     },
   },
+
   icons: {
     defaultSet: "mdi",
     aliases,
@@ -53,3 +51,6 @@ export default createVuetify({
     },
   },
 });
+
+
+// Colors used: Dark classic blue (#0A1828), turquoise (#178582), gold (#BFA181)

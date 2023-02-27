@@ -1,6 +1,4 @@
 # default
-# shaik-karim-vue-vuetify
-Profile application 
 
 ## Project setup
 
