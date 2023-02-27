@@ -3,7 +3,7 @@
  *
  * Bootstraps Vuetify and other plugins then mounts the App`
  */
-
+import "bootstrap/dist/css/bootstrap.min.css";
 // Components
 import App from './App.vue'
 
@@ -12,9 +12,6 @@ import { createApp } from 'vue'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
-// only one of styles and scss should be used
-// import 'vuetify/styles'
-import './main.scss'
 
 const app = createApp(App)
 
