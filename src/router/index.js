@@ -3,6 +3,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
+    path: "/",
+    redirect: "/profile",
+  },
+  {
     path: "/profile",
     component: () => import("@/components/Profile.vue"),
   },
@@ -13,6 +17,10 @@ const routes = [
   {
     path: "/projects",
     component: () => import("@/components/Projects.vue"),
+  },
+  {
+    path: "/education",
+    component: () => import("@/components/Education.vue"),
   },
 ];
 
