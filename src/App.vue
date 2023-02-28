@@ -12,14 +12,14 @@
       <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" location="left" color="brand_color2">
+    <v-navigation-drawer v-model="drawer" location="left">
       <v-list>
         <v-list-item v-for="item in items" :key="item" :to="'/' + item.to"
           >{{ item.title }}
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-navigation-drawer color="brand_color2" location="right">
+    <v-navigation-drawer location="right">
       <v-list>
         <v-list-item v-for="content in contents" :key="content.to"
           ><a :href="'#' + content.to" class="text-decoration-none">{{
