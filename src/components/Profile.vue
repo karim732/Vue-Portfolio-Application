@@ -98,8 +98,8 @@ export default {
   },
   computed: {
     isMobile() {
-      const { mobile } = this.$vuetify.display;
-      return mobile ? true : false;
+      const { xs } = this.$vuetify.display;
+      return xs ? true : false;
     },
   },
   mounted() {

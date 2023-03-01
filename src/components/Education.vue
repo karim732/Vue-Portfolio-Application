@@ -2,7 +2,7 @@
   <v-container>
     <v-expansion-panels variant="popout" id="details" >
       <v-expansion-panel v-for="item in education" :key="item.title" >
-        <v-expansion-panel-title color="brand_color1"
+        <v-expansion-panel-title color="brand_color2"
           ><v-icon>mdi-school</v-icon>&nbsp;
           {{ item.title }}</v-expansion-panel-title
         >
@@ -53,7 +53,7 @@
         v-for="memo in memos"
         :key="memo"
         :src="memo"
-        class="bg-brand_color2"
+        class="bg-teal-lighten-5"
       >
       </v-carousel-item>
     </v-carousel>

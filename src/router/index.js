@@ -22,6 +22,10 @@ const routes = [
     path: "/education",
     component: () => import("@/components/Education.vue"),
   },
+  {
+    path: "/skills",
+    component: () => import("@/components/Skills.vue"),
+  },
 ];
 
 const router = createRouter({
