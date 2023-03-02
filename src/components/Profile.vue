@@ -22,7 +22,7 @@
       ></v-avatar>
     </v-row>
     <v-row v-if="isMobile" style="height: 90px" class=""> </v-row>
-    <v-row >
+    <v-row>
       <v-spacer v-if="!isMobile"></v-spacer>
       <v-col>
         <div class="text-h3">Shaik Karimulla</div>
@@ -80,20 +80,23 @@ export default {
         "Hindi - Speak, Write, Read",
         "Urdu - Speak",
       ],
-      contents: [
-        {
-          name: "Name & Designation",
-          to: "nameDesignation",
-        },
-        {
-          name: "Summary",
-          to: "summary",
-        },
-        {
-          name: "Hobbies & Languages",
-          to: "hobbiesLanguages",
-        },
-      ],
+      page_details: {
+        title: "Profile",
+        contents: [
+          {
+            name: "Name & Designation",
+            to: "nameDesignation",
+          },
+          {
+            name: "Summary",
+            to: "summary",
+          },
+          {
+            name: "Hobbies & Languages",
+            to: "hobbiesLanguages",
+          },
+        ],
+      },
     };
   },
   computed: {
@@ -103,7 +106,7 @@ export default {
     },
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>

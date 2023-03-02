@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-expansion-panels variant="popout" id="details" >
-      <v-expansion-panel v-for="item in education" :key="item.title" >
+    <v-expansion-panels variant="popout" id="details">
+      <v-expansion-panel v-for="item in education" :key="item.title">
         <v-expansion-panel-title color="brand_color1"
           ><v-icon>mdi-school</v-icon>&nbsp;
           {{ item.title }}</v-expansion-panel-title
@@ -114,20 +114,23 @@ export default {
         "src/assets/semester - 7.png",
         "src/assets/semester - 8.png",
       ],
-      contents: [
-        {
-          name: "Academic Details",
-          to: "details",
-        },
-        {
-          name: "Documents",
-          to: "documents",
-        },
-      ],
+      page_details: {
+        title: "Experience",
+        contents: [
+          {
+            name: "Academic Details",
+            to: "details",
+          },
+          {
+            name: "Documents",
+            to: "documents",
+          },
+        ],
+      },
     };
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>
