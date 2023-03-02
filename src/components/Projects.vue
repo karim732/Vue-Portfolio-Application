@@ -70,24 +70,27 @@ export default {
           to: "socialDistancing",
         },
       ],
-      contents: [
-        {
-          name: "User Profile",
-          to: "userProfile",
-        },
-        {
-          name: "Xiotra",
-          to: "xiotra",
-        },
-        {
-          name: "Social Distancing Violation Detection System",
-          to: "socialDistancing",
-        },
-      ],
+      page_details: {
+        title: "Projects",
+        contents: [
+          {
+            name: "User Profile",
+            to: "userProfile",
+          },
+          {
+            name: "Xiotra",
+            to: "xiotra",
+          },
+          {
+            name: "Social Distancing Violation Detection System",
+            to: "socialDistancing",
+          },
+        ],
+      },
     };
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>

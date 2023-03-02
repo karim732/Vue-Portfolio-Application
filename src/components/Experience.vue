@@ -59,26 +59,27 @@ export default {
           to: "infelearn",
         },
       ],
-      contents: [
-        {
-          name: "Prodapt Solutions Private Limited",
-          to: "prodapt",
-        },
-        {
-          name: "Stoneman Multiverse Media",
-          to: "stoneman",
-        },
-        {
-          name: "Infelearn",
-          to: "infelearn",
-        },
-      ],
+      page_details: {
+        title: "Experience",
+        contents: [
+          {
+            name: "Prodapt Solutions Private Limited",
+            to: "prodapt",
+          },
+          {
+            name: "Stoneman Multiverse Media",
+            to: "stoneman",
+          },
+          {
+            name: "Infelearn",
+            to: "infelearn",
+          },
+        ],
+      },
     };
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>
-
-
