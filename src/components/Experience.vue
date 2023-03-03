@@ -59,31 +59,34 @@ export default {
           to: "infelearn",
         },
       ],
-      contents: [
-        {
-          name: "Prodapt Solutions Private Limited",
-          to: "prodapt",
-        },
-        {
-          name: "Stoneman Multiverse Media",
-          to: "stoneman",
-        },
-        {
-          name: "Infelearn",
-          to: "infelearn",
-        },
-      ],
+      page_details: {
+        title: "Experience",
+        contents: [
+          {
+            name: "Prodapt Solutions Private Limited",
+            to: "prodapt",
+          },
+          {
+            name: "Stoneman Multiverse Media",
+            to: "stoneman",
+          },
+          {
+            name: "Infelearn",
+            to: "infelearn",
+          },
+        ],
+      },
     };
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>
 
 <style scoped>
-.v-card{
-  background-color: #E0F2F1;
-  color: #00796B;
+.v-card {
+  background-color: #e0f2f1;
+  color: #00796b;
 }
 </style>

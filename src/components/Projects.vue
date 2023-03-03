@@ -70,31 +70,34 @@ export default {
           to: "socialDistancing",
         },
       ],
-      contents: [
-        {
-          name: "User Profile",
-          to: "userProfile",
-        },
-        {
-          name: "Xiotra",
-          to: "xiotra",
-        },
-        {
-          name: "Social Distancing Violation Detection System",
-          to: "socialDistancing",
-        },
-      ],
+      page_details: {
+        title: "Projects",
+        contents: [
+          {
+            name: "User Profile",
+            to: "userProfile",
+          },
+          {
+            name: "Xiotra",
+            to: "xiotra",
+          },
+          {
+            name: "Social Distancing Violation Detection System",
+            to: "socialDistancing",
+          },
+        ],
+      },
     };
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>
 
 <style scoped>
-.v-card{
-  background-color: #E0F2F1;
-  color: #00796B;
+.v-card {
+  background-color: #e0f2f1;
+  color: #00796b;
 }
 </style>

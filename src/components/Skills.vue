@@ -7,7 +7,7 @@
         :key="domain.title"
         class="mx-auto"
       >
-        <v-sheet color="teal-lighten-5" class="pa-2" rounded>
+        <v-sheet color="teal-lighten-5" class="pa-2 h-100" rounded>
           <div class="text-h6 text-teal-darken-2">{{ domain.title }}</div>
           <div class="d-flex flex-wrap">
             <div
@@ -36,11 +36,15 @@
         </v-sheet>
       </v-col>
     </v-row>
+    <carousel :carousel-items="certifications" :delimiter="true" />
   </v-container>
 </template>
 
 <script>
+import Carousel from "../unit-components/carousel.vue";
+
 export default {
+  components: { Carousel },
   data() {
     return {
       skills: [
@@ -144,15 +148,53 @@ export default {
           ],
         },
       ],
-      contents: [
-        {
-          name: "Skills & Rating",
-          to: "skills",
-        },
-        {
-          name: "Documents",
-          to: "documens",
-        },
+      page_details: {
+        title: "Experience",
+        contents: [
+          {
+            name: "Skills & Rating",
+            to: "skills",
+          },
+          {
+            name: "Certifications",
+            to: "certifications",
+          },
+        ],
+      },
+      certifications: [
+        "src/assets/vue.jpg",
+        "src/assets/coursera.jpg",
+        "src/assets/dspython.jpg",
+        "src/assets/nptel c.jpg",
+        "src/assets/NPTEL Java.jpg",
+        "src/assets/NPTEL DBMS.jpg",
+        "src/assets/NPTEL IoT.jpg",
+        "src/assets/ss.jpg",
+        "src/assets/Udemy-YAML.jpg",
+        "src/assets/Udemy-Oracle.jpg",
+        "src/assets/github.jpg",
+        "src/assets/coursera1.jpg",
+        "src/assets/coursera2.jpg",
+        "src/assets/coursera3.jpg",
+        "src/assets/coursera4.jpg",
+        "src/assets/coursera5.png",
+        "src/assets/ai.jpg",
+        "src/assets/python.jpg",
+        "src/assets/c.jpg",
+        "src/assets/cpp.jpg",
+        "src/assets/arduino.jpg",
+        "src/assets/codegnan.jpg",
+        "src/assets/reactjs.png",
+        "src/assets/django.png",
+        "src/assets/effective leadership.jpg",
+        "src/assets/presenting data.jpg",
+        "src/assets/infelearn.jpg",
+        "src/assets/infelearn letter.jpg",
+        "src/assets/tcs.jpg",
+        "src/assets/techgig.jpg",
+        "src/assets/d2c.jpg",
+        "src/assets/aau training.jpg",
+        "src/assets/aau.jpg",
       ],
     };
   },
@@ -163,7 +205,7 @@ export default {
     },
   },
   mounted() {
-    this.$emit("contents", this.contents);
+    this.$emit("contents", this.page_details);
   },
 };
 </script>
