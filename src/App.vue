@@ -35,9 +35,13 @@
 
       <v-menu activator="#profile-activator">
         <v-list>
-          <v-list-item to="/"> Contact Me </v-list-item>
-          <v-divider class="m-0"></v-divider>
-          <v-list-item to="/">Technologies </v-list-item>
+          <v-list-item
+            v-for="(item, index) in account"
+            :key="index"
+            :to="item.to"
+          >
+            {{ item.title }}
+          </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
@@ -71,6 +75,17 @@
 export default {
   data: () => ({
     drawer: true,
+    account: [
+      {
+        title: "Contact Me",
+        to: "/",
+      },
+      {
+        title: "About",
+        to: "/",
+      },
+    ],
+
     items: [
       {
         title: "Profile",

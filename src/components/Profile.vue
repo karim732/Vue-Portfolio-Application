@@ -25,37 +25,32 @@
     <v-row>
       <v-spacer v-if="!isMobile"></v-spacer>
       <v-col>
-        <div class="text-h3">Shaik Karimulla</div>
-        <div class="text-h5">Software Engineer</div>
+        <div class="text-h3">{{ name }}</div>
+        <div class="text-h5">{{ designation }}</div>
       </v-col>
     </v-row>
     <v-row id="summary">
       <v-col>
-        Enthusiastic engineer eagar to learn, grow and excel in software
-        industry. I am a team player with strong communiction skills and also
-        works well independently to solve problems. I am able to possess
-        flexibility and logical thinking. I am a member of Codewars(a coding
-        challenge site).
+        {{ summary }}
       </v-col>
     </v-row>
     <v-row class="mt-3" id="hobbiesLanguages">
-      <v-col :cols="isMobile ? 12 : 6" class="mt-2">
+      <v-col
+        :cols="isMobile ? 12 : 6"
+        class="mt-2"
+        v-for="detail in hobbies_languages"
+        :key="detail.title"
+      >
         <ul class="list-group">
-          <li class="list-group-item bg-brand_color2 text-center">Hobbies</li>
-          <li class="list-group-item" v-for="hobby in hobbies" :key="hobby">
-            {{ hobby }}
+          <li class="list-group-item bg-brand_color2 text-center">
+            {{ detail.title }}
           </li>
-        </ul>
-      </v-col>
-      <v-col :cols="isMobile ? 12 : 6" class="mt-2">
-        <ul class="list-group">
-          <li class="list-group-item bg-brand_color2 text-center">Languages</li>
           <li
             class="list-group-item"
-            v-for="language in languages"
-            :key="language"
+            v-for="item in detail.details"
+            :key="item"
           >
-            {{ language }}
+            {{ item }}
           </li>
         </ul>
       </v-col>
@@ -68,17 +63,29 @@ export default {
   emits: ["contents"],
   data() {
     return {
-      hobbies: [
-        "Programming",
-        "Reading books",
-        "Playing Football and Cricket",
-        "Listening podcasts",
-      ],
-      languages: [
-        "English - Speak, Write, Read",
-        "Telugu - Speak, Write, Read",
-        "Hindi - Speak, Write, Read",
-        "Urdu - Speak",
+      name: "Shaik Karimulla",
+      designation: "Software Engineer",
+      summary:
+        "Enthusiastic engineer eagar to learn, grow and excel in software industry. I am a team player with strong communiction skills and also works well independently to solve problems. I am able to possess flexibility and logical thinking. I am a member of Codewars(a coding challenge site).",
+      hobbies_languages: [
+        {
+          title: "Hobbies",
+          details: [
+            "Programming",
+            "Reading books",
+            "Playing Football and Cricket",
+            "Listening podcasts",
+          ],
+        },
+        {
+          title: "Languages",
+          details: [
+            "English - Speak, Write, Read",
+            "Telugu - Speak, Write, Read",
+            "Hindi - Speak, Write, Read",
+            "Urdu - Speak",
+          ],
+        },
       ],
       page_details: {
         title: "Profile",
@@ -101,8 +108,8 @@ export default {
   },
   computed: {
     isMobile() {
-      const { mobile } = this.$vuetify.display;
-      return mobile ? true : false;
+      const { xs } = this.$vuetify.display;
+      return xs ? true : false;
     },
   },
   mounted() {

@@ -1,8 +1,10 @@
 <template>
   <v-container>
     <v-expansion-panels variant="popout" id="details">
-      <v-expansion-panel v-for="item in education" :key="item.title">
-        <v-expansion-panel-title color="brand_color1"
+      <v-expansion-panel v-for="(item, index) in education" :key="item.title">
+        <v-expansion-panel-title
+          color="brand_color2"
+          :class="{ 'mt-1': index !== 0 }"
           ><v-icon>mdi-school</v-icon>&nbsp;
           {{ item.title }}</v-expansion-panel-title
         >
@@ -23,45 +25,14 @@
         </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
-    <v-carousel
-      cycle
-      delimiter-icon="mdi-rectangle"
-      color="brand_color1"
-      class="mt-4"
-      height="400"
-      id="documents"
-    >
-      <template v-slot:prev="{ props }">
-        <v-btn
-          variant="elevated"
-          color="brand_color1"
-          @click="props.onClick"
-          class="text-barnd_color3"
-          ><v-icon color="brand_color3" size="x-large"
-            >mdi-arrow-left</v-icon
-          ></v-btn
-        >
-      </template>
-      <template v-slot:next="{ props }">
-        <v-btn variant="elevated" color="brand_color1" @click="props.onClick"
-          ><v-icon color="brand_color3" size="x-large"
-            >mdi-arrow-right</v-icon
-          ></v-btn
-        >
-      </template>
-      <v-carousel-item
-        v-for="memo in memos"
-        :key="memo"
-        :src="memo"
-        class="bg-brand_color2"
-      >
-      </v-carousel-item>
-    </v-carousel>
+    <carousel :carousel-items="memos" />
   </v-container>
 </template>
 
 <script>
+import Carousel from "../unit-components/carousel.vue";
 export default {
+  components: { Carousel },
   data() {
     return {
       education: [
@@ -134,9 +105,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.v-card--variant-elevated {
-  box-shadow: none;
-}
-</style>
