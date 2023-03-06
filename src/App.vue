@@ -1,4 +1,5 @@
 <template>
+  <account-dialog v-if="dialog" :dialog="dialog" @close="dialog = ''" />
   <v-app>
     <v-app-bar
       color="brand_color1"
@@ -38,7 +39,7 @@
           <v-list-item
             v-for="(item, index) in account"
             :key="index"
-            :to="item.to"
+            @click="dialogComponent(item)"
           >
             {{ item.title }}
           </v-list-item>
@@ -47,8 +48,8 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" location="left">
-      <v-list>
-        <v-list-item v-for="item in items" :key="item" :to="'/' + item.to"
+      <v-list nav active-color="brand_color2" bg-color="transparent">
+        <v-list-item v-for="item in items" :key="item" :to="'/' + item.to" class="side-nav-left"
           >{{ item.title }}
         </v-list-item>
       </v-list>
@@ -72,44 +73,48 @@
 </template>
 
 <script>
+import AccountDialog from "./dialogs/AccountDialog.vue";
 export default {
-  data: () => ({
-    drawer: true,
-    account: [
-      {
-        title: "Contact Me",
-        to: "/",
-      },
-      {
-        title: "About",
-        to: "/",
-      },
-    ],
+  components: { AccountDialog },
+  data() {
+    return {
+      drawer: true,
+      dialog: "",
+      isContact: false,
+      account: [
+        {
+          title: "Contact Me",
+        },
+        {
+          title: "About",
+        },
+      ],
 
-    items: [
-      {
-        title: "Profile",
-        to: "profile",
-      },
-      {
-        title: "Experience",
-        to: "experience",
-      },
-      {
-        title: "Projects",
-        to: "projects",
-      },
-      {
-        title: "Education",
-        to: "education",
-      },
-      {
-        title: "Skills",
-        to: "skills",
-      },
-    ],
-    page_details: {},
-  }),
+      items: [
+        {
+          title: "Profile",
+          to: "profile",
+        },
+        {
+          title: "Experience",
+          to: "experience",
+        },
+        {
+          title: "Projects",
+          to: "projects",
+        },
+        {
+          title: "Education",
+          to: "education",
+        },
+        {
+          title: "Skills",
+          to: "skills",
+        },
+      ],
+      page_details: {},
+    };
+  },
 
   computed: {
     displayHamburg() {
@@ -117,5 +122,17 @@ export default {
       return mdAndDown ? true : false;
     },
   },
+  methods: {
+    dialogComponent(title) {
+      this.dialog = title.title === "About" ? "about" : "contact-me";
+    },
+  },
 };
 </script>
+
+<style scoped>
+.side-nav-left:hover {
+  background-color: transparent;
+  color: black;
+}
+</style>

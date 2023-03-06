@@ -1,10 +1,8 @@
 <template>
   <v-container>
     <v-expansion-panels variant="popout" id="details">
-      <v-expansion-panel v-for="(item, index) in education" :key="item.title">
-        <v-expansion-panel-title
-          color="brand_color2"
-          :class="{ 'mt-1': index !== 0 }"
+      <v-expansion-panel v-for="item in education" :key="item.title">
+        <v-expansion-panel-title color="brand_color2"
           ><v-icon>mdi-school</v-icon>&nbsp;
           {{ item.title }}</v-expansion-panel-title
         >
@@ -30,7 +28,7 @@
 </template>
 
 <script>
-import Carousel from "../unit-components/carousel.vue";
+import Carousel from "../unit-components/Carousel.vue";
 export default {
   components: { Carousel },
   data() {

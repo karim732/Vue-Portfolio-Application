@@ -7,8 +7,14 @@
       v-for="project in projects"
       :key="project.title"
       class="mb-3"
+      :color="project.color"
     >
-      <v-card-item>
+      <v-card-item
+        :class="{
+          'bg-brand_color2': project.bg,
+          'bg-brand_color3': !project.bg,
+        }"
+      >
         <v-card-title
           >{{ project.title }}
           <a
@@ -20,11 +26,10 @@
             Link</a
           ></v-card-title
         >
-
-        <v-card-subtitle>{{ project.role }}</v-card-subtitle>
       </v-card-item>
 
       <v-card-text>
+        <v-card-subtitle class="fs-6 my-1">{{ project.role }}</v-card-subtitle>
         <ul>
           <li v-for="li in project.text" :key="li">{{ li }}</li>
         </ul>
@@ -47,6 +52,8 @@ export default {
             "VueJs, Vuetify, JavaScript, Bootstrap, HTML, CSS",
           ],
           to: "userProfile",
+          color: "brand_color2",
+          bg: true,
         },
         {
           title: "Xiotra - Easy Learning",
@@ -57,6 +64,8 @@ export default {
           ],
           link: "<a href='https://karim732.github.io/xiotra.com'>Link</a>",
           to: "xiotra",
+          color: "brand_color3",
+          bg: false,
         },
         {
           title: "Social Distancing Violation Detection System",
@@ -68,6 +77,8 @@ export default {
             "Count of people who are violating social distancing is also show.",
           ],
           to: "socialDistancing",
+          color: "brand_color2",
+          bg: true,
         },
       ],
       page_details: {
@@ -94,10 +105,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.v-card {
-  background-color: #e0f2f1;
-  color: #00796b;
-}
-</style>

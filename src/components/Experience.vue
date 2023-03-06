@@ -1,26 +1,29 @@
 <template>
   <v-container>
-    <v-card
-      :id="experience.to"
-      width="100%"
-      variant="tonal"
-      v-for="experience in experiences"
-      :key="experience.title"
-      class="mb-3"
-    >
-      <v-card-item>
-        <v-card-title>{{ experience.title }}</v-card-title>
+    <v-timeline side="end">
+      <v-timeline-item
+        width="100%"
+        v-for="experience in experiences"
+        :key="experience.title"
+        :dot-color="experience.color"
+      >
+        <template v-slot:opposite> {{ experience.period }} </template>
+        <v-card :id="experience.to" variant="tonal" class="mb-3" :color="experience.color">
+          <v-card-item>
+            <v-card-title>{{ experience.title }}</v-card-title>
 
-        <v-card-subtitle>{{ experience.role }}</v-card-subtitle>
-        <v-card-subtitle>{{ experience.technologies }}</v-card-subtitle>
-      </v-card-item>
+            <v-card-subtitle>{{ experience.role }}</v-card-subtitle>
+            <v-card-subtitle>{{ experience.technologies }}</v-card-subtitle>
+          </v-card-item>
 
-      <v-card-text>
-        <ul>
-          <li v-for="li in experience.text" :key="li">{{ li }}</li>
-        </ul>
-      </v-card-text>
-    </v-card>
+          <v-card-text>
+            <ul>
+              <li v-for="li in experience.text" :key="li">{{ li }}</li>
+            </ul>
+          </v-card-text>
+        </v-card>
+      </v-timeline-item>
+    </v-timeline>
   </v-container>
 </template>
 
@@ -31,7 +34,8 @@ export default {
       experiences: [
         {
           title: "Prodapt Solutions Private Limited",
-          role: "Software Engineer - Front-end developer - Aug 2022 -> Feb2023",
+          period:"Aug 2022 - Feb 2023",
+          role: "Software Engineer - Front-end developer.",
           technologies:
             "Vue.Js - Vuetify - JavaScript - Bootstrap - HTML - CSS",
           text: [
@@ -40,23 +44,28 @@ export default {
             "Handled Backend response.",
           ],
           to: "prodapt",
+          color:"brand_color2",
         },
         {
           title: "Stoneman Multiverse Media",
-          role: "Intern - Front-end developer - Dec 2021 -> Apr 2022",
+          period:"Dec 2021 - Apr 2022",
+          role: "Intern - Front-end developer.",
           technologies: "Bootstrap - JavaScript - HTML - CSS",
           text: ["Created responsive web application which is static."],
           to: "stoneman",
+          color:"brand_color3",
         },
         {
           title: "Infelearn",
-          role: "Intern - HR Internship - Jul 2021 -> Aug 2021",
+          period:"Jul 2021 - Aug 2021",
+          role: "Intern - HR Internship.",
           technologies: "Communication skills - Team building",
           text: [
             "Organaised team meetings daily.",
             "Contacted college TPO's and explained about Infelearn.",
           ],
           to: "infelearn",
+          color:"brand_color2",
         },
       ],
       page_details: {
@@ -83,10 +92,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.v-card {
-  background-color: #e0f2f1;
-  color: #00796b;
-}
-</style>
