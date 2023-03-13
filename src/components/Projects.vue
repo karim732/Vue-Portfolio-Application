@@ -18,7 +18,7 @@
         <v-card-title
           >{{ project.title }}
           <a
-            href="https://karim732.github.io/xiotra.com"
+            :href="project.link"
             target="_blank"
             v-if="project.link"
             class="ms-4"
@@ -51,6 +51,7 @@ export default {
             "Best suits for IT employees.",
             "VueJs, Vuetify, JavaScript, Bootstrap, HTML, CSS",
           ],
+          link: "<a href='https://https://karim-shaik.netlify.app/'>Link</a>",
           to: "userProfile",
           color: "brand_color2",
           bg: true,

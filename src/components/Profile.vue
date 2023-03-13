@@ -16,7 +16,7 @@
         </template>
       </v-img>
       <v-avatar
-        image=".././assets/avatar.jpg"
+        image="https://i.ibb.co/kG2PR8R/avatar.jpg"
         size="200"
         class="avatar--image"
       ></v-avatar>
