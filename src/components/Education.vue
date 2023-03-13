@@ -72,16 +72,16 @@ export default {
         },
       ],
       memos: [
-        "src/assets/10th.jpg",
-        "src/assets/12th.jpg",
-        "src/assets/semester - 1.jpg",
-        "src/assets/semester - 2.jpg",
-        "src/assets/semester - 3.jpg",
-        "src/assets/semester - 4.jpg",
-        "src/assets/semester - 5.jpg",
-        "src/assets/semester - 6.jpg",
-        "src/assets/semester - 7.png",
-        "src/assets/semester - 8.png",
+        "https://i.ibb.co/YyNGDMd/10th.jpg",
+        "https://i.ibb.co/SKyvfdp/12th.jpg",
+        "https://i.ibb.co/3vNGWJR/semester-1.jpg",
+        "https://i.ibb.co/T1m0MVg/semester-2.jpg" ,
+        "https://i.ibb.co/CKJTGB3/semester-3.jpg",
+        "https://i.ibb.co/zPrz457/semester-4.jpg",
+        "https://i.ibb.co/61ZgV4j/semester-5.jpg",
+        "https://i.ibb.co/3RXKhwN/semester-6.jpg",
+        "https://i.ibb.co/52gSH2t/semester-7.png",
+        "https://i.ibb.co/gT8HLyG/semester-8.png",
       ],
       page_details: {
         title: "Experience",
@@ -103,3 +103,4 @@ export default {
   },
 };
 </script>
+

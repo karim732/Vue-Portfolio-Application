@@ -41,7 +41,6 @@
 
 <script>
 export default {
-  // props: ["carouselItems"],
   props: {
     carouselItems: {
       type: Array,
