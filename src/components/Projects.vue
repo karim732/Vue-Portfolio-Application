@@ -51,7 +51,7 @@ export default {
             "Best suits for IT employees.",
             "VueJs, Vuetify, JavaScript, Bootstrap, HTML, CSS",
           ],
-          link: "https://https://karim-shaik.netlify.app/",
+          link: "https://karim-shaik.netlify.app/",
           to: "userProfile",
           color: "brand_color2",
           bg: true,
