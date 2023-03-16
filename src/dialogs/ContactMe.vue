@@ -32,7 +32,7 @@ export default {
         },
         {
           title:
-            "5-87, main bazar, Appapuram, Palnadu, Andhra Pradesh - 522611",
+            "5-87, main bazar, Appapuram, Palnadu, Andhra Pradesh, India - 522611",
           icon: "mdi-map-marker",
         },
       ],

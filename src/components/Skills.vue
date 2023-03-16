@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import Carousel from "../unit-components/Carousel.vue";
+import Carousel from "@/unit-components/Carousel";
 
 export default {
   components: { Carousel },
@@ -74,10 +74,6 @@ export default {
             },
             {
               title: "CSS",
-              rating: 4,
-            },
-            {
-              title: "Vuetify",
               rating: 4,
             },
           ],

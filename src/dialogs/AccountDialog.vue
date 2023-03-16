@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import ContactMe from "./ContactMe.vue";
-import About from "./About.vue";
+import ContactMe from "@/dialogs/ContactMe.vue";
+import About from "@/dialogs/About.vue";
 export default {
   components: { ContactMe, About },
   props: {

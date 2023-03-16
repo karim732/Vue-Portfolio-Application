@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Carousel from "../unit-components/Carousel.vue";
+import Carousel from "@/unit-components/Carousel";
 export default {
   components: { Carousel },
   data() {

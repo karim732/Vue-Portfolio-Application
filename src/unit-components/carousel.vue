@@ -3,6 +3,7 @@
     cycle
     :hide-delimiters="delimiter"
     delimiter-icon="mdi-rectangle"
+    :show-arrows="displayArrow"
     color="brand_color1"
     class="mt-4 rounded"
     height="400"
@@ -49,6 +50,12 @@ export default {
     delimiter: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    displayArrow() {
+      const { smAndDown } = this.$vuetify.display;
+      return smAndDown ? false : true;
     },
   },
 };

@@ -1,6 +1,7 @@
 <template>
   <account-dialog v-if="dialog" :dialog="dialog" @close="dialog = ''" />
   <v-app>
+    <!-- top nav -->
     <v-app-bar
       color="brand_color1"
       prominent
@@ -20,40 +21,46 @@
         class="h-50 shrink krm--logo"
       ></v-img>
 
-      <v-spacer></v-spacer>
+      <v-spacer v-if="!displayHamburg"></v-spacer>
       <v-toolbar-title class="text-brand_color3">{{
         page_details.title
       }}</v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-icon
-        icon="mdi-account"
-        id="profile-activator"
-        role="button"
-        color="brand_color3"
-        size="32"
-      ></v-icon>
+      <div>
+        <v-icon
+          icon="mdi-account"
+          id="profile-activator"
+          role="button"
+          color="brand_color3"
+          size="32"
+        ></v-icon>
+      </div>
 
       <v-menu activator="#profile-activator">
         <v-list>
           <v-list-item
             v-for="(item, index) in account"
             :key="index"
-            @click="dialogComponent(item)"
+            @click="dialogComponent(item.title)"
           >
             {{ item.title }}
           </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
-
+    <!-- left nav -->
     <v-navigation-drawer v-model="drawer" location="left">
       <v-list nav active-color="brand_color2" bg-color="transparent">
-        <v-list-item v-for="item in items" :key="item" :to="'/' + item.to" class="side-nav-left"
+        <v-list-item
+          v-for="item in items"
+          :key="item"
+          :to="'/' + item.to"
+          class="side-nav-left"
           >{{ item.title }}
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <!-- right nav -->
     <v-navigation-drawer location="right">
       <v-list>
         <v-list-item v-for="content in page_details.contents" :key="content.to"
@@ -63,17 +70,15 @@
         >
       </v-list>
     </v-navigation-drawer>
-
+    <!-- body -->
     <v-main>
-      <v-responsive>
-        <router-view @contents="(details) => (page_details = details)" />
-      </v-responsive>
+      <router-view @contents="(details) => (page_details = details)" />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import AccountDialog from "./dialogs/AccountDialog.vue";
+import AccountDialog from "@/dialogs/AccountDialog.vue";
 export default {
   components: { AccountDialog },
   data() {
@@ -124,7 +129,7 @@ export default {
   },
   methods: {
     dialogComponent(title) {
-      this.dialog = title.title === "About" ? "about" : "contact-me";
+      this.dialog = title === "\about\i" ? "about" : "contact-me";
     },
   },
 };
