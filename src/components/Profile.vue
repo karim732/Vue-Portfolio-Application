@@ -60,7 +60,7 @@
 
 <script>
 export default {
-  emits: ["contents"],
+  // emits: ["contents"],
   data() {
     return {
       name: "Shaik Karimulla",
