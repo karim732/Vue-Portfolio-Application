@@ -1,5 +1,12 @@
 // Composables
 import { createRouter, createWebHistory } from "vue-router";
+const ifAuthenticated = (to, from, next) => {
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    next();
+    return;
+  }
+  next("/");
+};
 
 const routes = [
   {
@@ -8,23 +15,88 @@ const routes = [
   },
   {
     path: "/profile",
-    component: () => import("@/components/Profile.vue"),
+    components: {
+      default: () => import("@/components/Profile.vue"),
+      Header: () => import("@/layouts/AppBar.vue"),
+      LeftSidebar: () => import("@/layouts/NavLeft.vue"),
+      RightSidebar: () => import("@/layouts/NavRight.vue"),
+    },
+    props: {
+      default: true,
+      Header: true,
+      LeftSidebar: true,
+      RightSidebar: true,
+    },
+    beforeEnter: ifAuthenticated,
+    // component: () => import("@/components/Profile.vue"),
   },
   {
     path: "/experience",
-    component: () => import("@/components/Experience.vue"),
+    components: {
+      default: () => import("@/components/Experience.vue"),
+      Header: () => import("@/layouts/AppBar.vue"),
+      LeftSidebar: () => import("@/layouts/NavLeft.vue"),
+      RightSidebar: () => import("@/layouts/NavRight.vue"),
+    },
+    props: {
+      default: true,
+      Header: true,
+      LeftSidebar: true,
+      RightSidebar: true,
+    },
+    beforeEnter: ifAuthenticated,
+    // component: () => import("@/components/Experience.vue"),
   },
   {
     path: "/projects",
-    component: () => import("@/components/Projects.vue"),
+    components: {
+      default: () => import("@/components/Projects.vue"),
+      Header: () => import("@/layouts/AppBar.vue"),
+      LeftSidebar: () => import("@/layouts/NavLeft.vue"),
+      RightSidebar: () => import("@/layouts/NavRight.vue"),
+    },
+    props: {
+      default: true,
+      Header: true,
+      LeftSidebar: true,
+      RightSidebar: true,
+    },
+    beforeEnter: ifAuthenticated,
+    // component: () => import("@/components/Projects.vue"),
   },
   {
     path: "/education",
-    component: () => import("@/components/Education.vue"),
+    components: {
+      default: () => import("@/components/Education.vue"),
+      Header: () => import("@/layouts/AppBar.vue"),
+      LeftSidebar: () => import("@/layouts/NavLeft.vue"),
+      RightSidebar: () => import("@/layouts/NavRight.vue"),
+    },
+    props: {
+      default: true,
+      Header: true,
+      LeftSidebar: true,
+      RightSidebar: true,
+    },
+    beforeEnter: ifAuthenticated,
+    // component: () => import("@/components/Education.vue"),
   },
   {
     path: "/skills",
-    component: () => import("@/components/Skills.vue"),
+    components: {
+      default: () => import("@/components/Skills.vue"),
+      Header: () => import("@/layouts/AppBar.vue"),
+      LeftSidebar: () => import("@/layouts/NavLeft.vue"),
+      RightSidebar: () => import("@/layouts/NavRight.vue"),
+    },
+    props: {
+      default: true,
+      Header: true,
+      LeftSidebar: true,
+      RightSidebar: true,
+    },
+    beforeEnter: ifAuthenticated,
+    // component: () => import("@/components/Skills.vue"),
   },
 ];
 
