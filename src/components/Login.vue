@@ -2,9 +2,9 @@
   <v-container
     fluid
     class="bg-brand_color1"
-    style="height: 100vh; position: relative"
+    style="max-height: 100vh; position: relative; overflow: hidden"
   >
-    <v-row v-for="n in 15" :key="n" class="">
+    <v-row v-for="n in 10" :key="n" class="">
       <v-col
         v-for="n in isMd"
         :key="n"
@@ -42,6 +42,9 @@
 
 <script>
 export default {
+  emits: {
+    contents: null,
+  },
   data() {
     return {
       username: "",
@@ -56,7 +59,8 @@ export default {
 
       if (valid) {
         if (this.username.toLowerCase() === "karim" && this.password === "1234")
-          this.$router.push("/profile");
+          localStorage.setItem("isLoggedIn", true);
+        this.$router.push("/profile");
       } else {
         this.showError = true;
       }
@@ -94,11 +98,6 @@ export default {
   background: rgb(var(--v-theme-surface));
   border-color: transparent;
   color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
-  box-shadow: 0px 3px 1px -2px var(--v-shadow-key-umbra-opacity, rgba(223, 10, 10, 0.2)),
-    0px 2px 2px 0px
-      var(--v-shadow-key-penumbra-opacity, rgba(225, 13, 13, 0.14)),
-    0px 1px 5px 0px
-      var(--v-shadow-key-penumbra-opacity, rgba(181, 18, 18, 0.12));
 }
 </style>
 
