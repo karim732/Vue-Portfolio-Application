@@ -145,7 +145,7 @@ export default {
         },
       ],
       page_details: {
-        title: "Experience",
+        title: "Skills",
         contents: [
           {
             name: "Skills & Rating",
