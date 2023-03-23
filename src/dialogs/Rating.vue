@@ -62,7 +62,23 @@
       </v-col>
       <v-col class="col--height overflow-hide-x mt-1" :cols="smallAndBelow">
         <div class="text-h6">Reviews</div>
+        <div v-if="error" class="text-center text-h6 text-warning">
+          {{ error }}
+        </div>
+        <!-- <v-progress-linear
+          indeterminate
+          color="teal-lighten-1"
+          v-if="isLoading"
+        ></v-progress-linear> -->
+        <v-progress-circular
+          v-if="true"
+          indeterminate
+          color="teal-lighten-1"
+          :size="49" class="content--center"
+        ></v-progress-circular>
+
         <div
+          v-else
           v-for="user in results"
           :key="user.name"
           class="card pa-2 mb-2 bg-teal-lighten-5"
@@ -107,6 +123,8 @@ export default {
       ratingWarning: false,
       nameExistWarning: false,
       results: null,
+      isLoading: false,
+      error: "",
       nameRules: [(v) => !!v || "Required field"],
     };
   },
@@ -157,6 +175,7 @@ export default {
       }
     },
     fetchReviews() {
+      this.isLoading = true;
       fetch(
         "https://profile-74a04-default-rtdb.asia-southeast1.firebasedatabase.app/rating.json"
       )
@@ -166,7 +185,7 @@ export default {
           }
         })
         .then((data) => {
-          // this.isLoading = false;
+          this.isLoading = false;
           const results = [];
           this.averageRating = 0;
           this.presentNames = [];
@@ -186,7 +205,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          // this.isLoading = false;
+          this.isLoading = false;
           this.error = "Failed to fetch data - please try again later";
         });
     },
