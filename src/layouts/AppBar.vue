@@ -72,9 +72,6 @@ export default {
           title: "Rate",
           component: "Rating",
         },
-        {
-          title: "Logout",
-        },
       ],
     };
   },
@@ -86,10 +83,7 @@ export default {
   },
   methods: {
     dialogComponent(item) {
-      if (item.title === "Logout") {
-        localStorage.setItem("isLoggedIn", false);
-        this.$router.push("/");
-      } else this.dialog = item.component;
+      this.dialog = item.component;
     },
   },
 };

@@ -54,3 +54,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.side-nav-left:hover {
+  background-color: transparent;
+  color: black;
+}
+</style>
