@@ -84,7 +84,7 @@ export default {
         "https://i.ibb.co/gT8HLyG/semester-8.png",
       ],
       page_details: {
-        title: "Experience",
+        title: "Education",
         contents: [
           {
             name: "Academic Details",
