@@ -2,12 +2,7 @@
   <teleport to="body">
     <div class="backdrop" @click="$emit('close')"></div>
     <dialog open>
-      <v-card variant="tonal" color="brand_color2">
-        <component :is="dialog"></component>
-        <v-card-actions class="d-flex justify-end">
-          <v-btn color="red" @click="$emit('close')">Close</v-btn>
-        </v-card-actions>
-      </v-card>
+      <component :is="dialog" @child-close="$emit('close')"></component>
     </dialog>
   </teleport>
 </template>
@@ -17,7 +12,7 @@ import ContactMe from "@/dialogs/ContactMe.vue";
 import About from "@/dialogs/About.vue";
 import Rating from "@/dialogs/Rating.vue";
 export default {
-  components: { ContactMe, About,Rating },
+  components: { ContactMe, About, Rating },
   props: {
     dialog: {
       type: String,
@@ -44,12 +39,14 @@ export default {
 }
 dialog {
   position: fixed;
-  top: 20vh;
+  top: 10vh;
   left: 10%;
   width: 80%;
   z-index: 1040;
   border-radius: 12px;
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  max-height: calc(100vh - 20vh);
+  overflow-y: auto;
 }
 </style>

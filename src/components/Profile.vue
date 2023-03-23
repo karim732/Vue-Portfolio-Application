@@ -66,24 +66,24 @@ export default {
       name: "Shaik Karimulla",
       designation: "Software Engineer",
       summary:
-        "Enthusiastic engineer eagar to learn, grow and excel in software industry. I am a team player with strong communiction skills and also works well independently to solve problems. I am able to possess flexibility and logical thinking. I am a member of Codewars(a coding challenge site).",
+        "Enthusiastic engineer eagar to learn, grow and excel in software industry. Team player with strong communiction skills and also works well independently to solve problems and able to possess flexibility and logical thinking. I am a member of Codewars(a coding challenge site).",
       hobbies_languages: [
         {
           title: "Hobbies",
           details: [
-            "Programming",
-            "Reading books",
-            "Playing Football and Cricket",
-            "Listening podcasts",
+            "Programming.",
+            "Reading books.",
+            "Playing Football and Cricket.",
+            "Listening podcasts.",
           ],
         },
         {
           title: "Languages",
           details: [
-            "English - Speak, Write, Read",
-            "Telugu - Speak, Write, Read",
-            "Hindi - Speak, Write, Read",
-            "Urdu - Speak",
+            "English - Speak, Write, Read.",
+            "Telugu - Speak, Write, Read.",
+            "Hindi - Speak, Write, Read.",
+            "Urdu - Speak.",
           ],
         },
       ],
