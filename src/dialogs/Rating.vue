@@ -65,13 +65,8 @@
         <div v-if="error" class="text-center text-h6 text-warning">
           {{ error }}
         </div>
-        <!-- <v-progress-linear
-          indeterminate
-          color="teal-lighten-1"
-          v-if="isLoading"
-        ></v-progress-linear> -->
         <v-progress-circular
-          v-if="true"
+          v-if="isLoading"
           indeterminate
           color="teal-lighten-1"
           :size="49" class="content--center"
