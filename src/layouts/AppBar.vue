@@ -13,8 +13,7 @@
       color="brand_color3"
       class="ms-0"
     ></v-app-bar-nav-icon>
-
-    <v-img src="@/assets/krmlogo.jpg" class="h-50 shrink krm--logo"></v-img>
+    <v-img src="@/assets/krm icon.png" class="krm--logo" @click="$router.push('/')"></v-img>
 
     <v-spacer v-if="!displayHamburg"></v-spacer>
     <v-toolbar-title class="text-brand_color3">{{
@@ -47,6 +46,7 @@
 
 <script>
 import AccountDialog from "@/dialogs/AccountDialog.vue";
+import router from "@/router";
 export default {
   components: { AccountDialog },
   emits: ["hamburgClicked"],
