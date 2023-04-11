@@ -4,12 +4,6 @@
       <v-card-title>{{ item.title }}</v-card-title>
       <v-card-subtitle>{{ item.subtitle }}</v-card-subtitle>
     </div>
-    <v-card-title
-      >Github Repository -
-      <a href="https://github.com/karim732/shaikkarim" target="_blank">
-        Link</a
-      ></v-card-title
-    >
     <v-card-actions class="d-flex justify-end">
       <v-btn color="red" @click="$emit('ChildClose')" class="text-btn"
         >Close</v-btn
