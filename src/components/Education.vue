@@ -72,16 +72,14 @@ export default {
         },
       ],
       memos: [
-        "https://i.ibb.co/YyNGDMd/10th.jpg",
-        "https://i.ibb.co/SKyvfdp/12th.jpg",
-        "https://i.ibb.co/3vNGWJR/semester-1.jpg",
-        "https://i.ibb.co/T1m0MVg/semester-2.jpg" ,
-        "https://i.ibb.co/CKJTGB3/semester-3.jpg",
-        "https://i.ibb.co/zPrz457/semester-4.jpg",
-        "https://i.ibb.co/61ZgV4j/semester-5.jpg",
-        "https://i.ibb.co/3RXKhwN/semester-6.jpg",
-        "https://i.ibb.co/52gSH2t/semester-7.png",
-        "https://i.ibb.co/gT8HLyG/semester-8.png",
+        "https://i.ibb.co/xDQfLPY/semester-2.jpg",
+        "https://i.ibb.co/yqqJx1V/semester-3.jpg",
+        "https://i.ibb.co/DYYtKTd/semester-4.jpg",
+        "https://i.ibb.co/k5ZgDGQ/semester-5.jpg",
+        "https://i.ibb.co/JtpbTfY/semester-6.jpg",
+        "https://i.ibb.co/V9Z5Gdm/semester-7.jpg",
+        "https://i.ibb.co/PDZMtDm/semester-8.jpg",
+        "https://i.ibb.co/Jn27rtW/semester-1.jpg",
       ],
       page_details: {
         title: "Education",
@@ -103,4 +101,3 @@ export default {
   },
 };
 </script>
-

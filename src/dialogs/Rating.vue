@@ -34,8 +34,7 @@
             ></v-rating>
 
             <v-textarea
-              label="Feedback on Technical skills/User experience"
-              placeholder="Comments"
+              placeholder="Feedback on Technical skills/ User experience"
               variant="solo"
               density="compact"
               clearable
