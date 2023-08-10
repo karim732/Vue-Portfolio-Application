@@ -8,11 +8,10 @@
 </template>
 
 <script>
-import ContactMe from "@/dialogs/ContactMe.vue";
 import About from "@/dialogs/About.vue";
 import Rating from "@/dialogs/Rating.vue";
 export default {
-  components: { ContactMe, About, Rating },
+  components: { About, Rating },
   props: {
     dialog: {
       type: String,

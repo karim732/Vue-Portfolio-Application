@@ -13,7 +13,11 @@
       color="brand_color3"
       class="ms-0"
     ></v-app-bar-nav-icon>
-    <v-img src="@/assets/krm icon1.png" class="krm--logo" @click="$router.push('/')"></v-img>
+    <v-img
+      src="@/assets/krm icon1.png"
+      class="krm--logo"
+      @click="$router.push('/')"
+    ></v-img>
 
     <v-spacer v-if="!displayHamburg"></v-spacer>
     <v-toolbar-title class="text-brand_color3">{{
@@ -61,10 +65,6 @@ export default {
       dialog: "",
       account: [
         {
-          title: "Contact Me",
-          component: "contact-me",
-        },
-        {
           title: "About",
           component: "about",
         },
@@ -78,7 +78,7 @@ export default {
   computed: {
     displayHamburg() {
       const { mdAndDown } = this.$vuetify.display;
-      return mdAndDown ? true : false;
+      return mdAndDown;
     },
   },
   methods: {

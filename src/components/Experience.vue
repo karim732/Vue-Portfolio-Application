@@ -49,8 +49,9 @@ export default {
             "Vue.Js - Vuetify - JavaScript - Bootstrap - HTML - CSS",
           text: [
             "Created responsive web application.",
-            "Included out of the box components of Vuetify.",
             "Handled Backend response.",
+            "R&D on VueJs and Vuetify and Scaffolding.",
+            "Worked on RPA use cases using Python and Robocorp framework.",
           ],
           to: "prodapt",
           color: "brand_color2",
