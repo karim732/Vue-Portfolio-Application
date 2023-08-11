@@ -8,10 +8,11 @@
     <nav-left :drawer="drawer"></nav-left>
     <!-- right nav -->
     <nav-right :page-details="page_details"></nav-right>
-    <!-- body -->
 
+    <!-- body -->
     <v-main>
       <router-view @contents="(details) => (page_details = details)" />
+      <Footer></Footer>
     </v-main>
   </v-app>
 </template>
@@ -20,8 +21,9 @@
 import AppBar from "@/layouts/AppBar.vue";
 import NavLeft from "@/layouts/NavLeft.vue";
 import NavRight from "@/layouts/NavRight.vue";
+import Footer from "@/layouts/Footer.vue";
 export default {
-  components: { AppBar, NavLeft, NavRight },
+  components: { AppBar, NavLeft, NavRight, Footer },
   data() {
     return {
       drawer: false,
