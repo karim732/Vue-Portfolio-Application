@@ -53,7 +53,11 @@ export default {
           color: "info",
           details: [
             {
-              title: "VueJs",
+              title: "Vue",
+              rating: 4,
+            },
+            {
+              title: "React",
               rating: 4,
             },
             {
@@ -123,7 +127,7 @@ export default {
             },
             {
               title: "Data Science",
-              rating: 2,
+              rating: 3,
             },
             {
               title: "Cloud",

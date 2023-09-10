@@ -19,11 +19,10 @@
       @click="$router.push('/')"
     ></v-img>
 
-    <v-spacer v-if="!displayHamburg"></v-spacer>
     <v-toolbar-title class="text-brand_color3">{{
       pageDetails.title
     }}</v-toolbar-title>
-    <v-spacer></v-spacer>
+
     <div>
       <v-icon
         icon="mdi-account"

@@ -35,10 +35,10 @@ export default {
           title: "karimshaik5252@gmail.com",
         },
         {
-          title: "8096684840",
+          title: "+91 8096684840",
         },
         {
-          title: "5-87, main bazar, Appapuram, Andhra Pradesh, India - 522611",
+          title: "5-87, Appapuram, Andhra Pradesh, India - 522611",
         },
       ],
       icons: [
