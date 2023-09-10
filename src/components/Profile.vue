@@ -66,7 +66,7 @@ export default {
       name: "Shaik Karimulla",
       designation: "Software Engineer",
       summary:
-        "Enthusiastic engineer eager to learn, grow and excel in software industry. Team player with strong communiction skills and also works well independently to solve problems and able to possess flexibility and logical thinking. I am a member of Codewars(a coding challenge site).",
+        "Enthusiastic engineer eager to learn, grow and excel insoftware industry. Innovative software developer with 1+years of experience in developing and optimizing solutions. Proficient in Python, Vue.Js, React and JavaScript with a proven track record of delivering high-quality software on time. Looking to leverage my technical skills to contribute to organization mission and drive innovation in the field of software development.",
       hobbies_languages: [
         {
           title: "Hobbies",

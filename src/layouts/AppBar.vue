@@ -14,7 +14,7 @@
       class="ms-0"
     ></v-app-bar-nav-icon>
     <v-img
-      src="@/assets/krm icon1.png"
+      src="../assets/krm_icon1.png"
       class="krm--logo"
       @click="$router.push('/')"
     ></v-img>
